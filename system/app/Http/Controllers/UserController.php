@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\UserDetail;
+use App\Models\Kategori;
 
 /**
  * 
@@ -42,6 +43,7 @@ class UserController extends Controller
 	function show(User $user)
 	{
 		$data['user'] = $user;
+		$data['list_kategori'] = Kategori::all();
 		return view('admin/user/show', $data);
 	}
 	
